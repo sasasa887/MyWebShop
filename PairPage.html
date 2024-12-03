@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カップル向けペアルック下着</title>
+    <link rel="stylesheet" href="./css/pair.css">
+    <link rel="stylesheet" href="./css/AIButton.css">
+</head>
+<body>
+    <!-- ナビゲーションバー -->
+    <header>
+        <div class="logo">
+            <h1>ペアパンツ</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="TopPage.html">ホーム</a></li>
+                <li><a href="SportsPage.html">スポーツ</a></li>
+                <li><a href="PairPage.html">ペアパンツ</a></li>
+                <li><a href="PresentPage.html">プレゼント</a></li>
+                <li><a href="LovePage.html">もてパンツ</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="アイテムを検索...">
+            <button>検索</button>
+        </div>
+        <div class="search-bar">
+            <button onclick="location.href='register.html'">アカウント登録</button>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="slider">
+            <div class="slide">
+                <img src="./pic/pair0.jpg" alt="ペアルック下着">
+                <div class="caption">
+                    <h2>愛を深めるペアルック下着</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 商品グリッド -->
+    <section id="new-arrivals">
+        <h2>おすすめのカップル向けペアルック下着</h2>
+        <div class="slider">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="items-grid">
+                <div class="item">
+                    <img src="./pic/pair1.jpg" alt="カップルボクサー">
+                    <p>カップルボクサー - ￥4,000</p>
+                    <p>快適なフィット感とスタイリッシュなデザイン</p>
+                </div>
+                <div class="item">
+                    <img src="./pic/pair2.jpg" alt="カップルブリーフ">
+                    <p>カップルブリーフ - ￥4,500</p>
+                    <p>男女どちらも楽しめるフィット感</p>
+                </div>
+                <div class="item">
+                    <img src="./pic/pair3.jpg" alt="カップルショーツ">
+                    <p>カップルショーツ - ￥4,200</p>
+                    <p>リラックスできる着心地で一日中快適</p>
+                </div>
+                <!-- 追加のアイテム -->
+                <div class="item">
+                    <img src="./pic/pair4.jpg" alt="シームレスペアパンツ">
+                    <p>シームレスペアパンツ - ￥4,300</p>
+                    <p>無縫製デザインで目立たないシルエット</p>
+                </div>
+                <div class="item">
+                    <img src="./pic/pair5.jpg" alt="ペアランジェリー">
+                    <p>ペアランジェリー - ￥5,000</p>
+                    <p>特別な日を彩るランジェリーセット</p>
+                </div>
+            </div>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <p>&copy; 2024 NPTStore - All Rights Reserved.</p>
+        <nav>
+            <ul>
+                <li><a href="#terms">利用規約</a></li>
+                <li><a href="#privacy">プライバシーポリシー</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </footer>
+            <!-- AI相談ボタン -->
+            <button class="ai-consultation-btn" onclick="openAIConsultation()">AI相談</button>
+
+            <script>
+                function openAIConsultation() {
+                    alert("AI相談機能は現在準備中です。お楽しみに！");
+                }
+            </script>
+
+</body>
+</html>
