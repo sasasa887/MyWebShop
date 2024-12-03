@@ -1,0 +1,305 @@
+/* 基本設定 */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* ナビゲーション */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    max-width: flex;
+    max-height: 300px;
+    color: white;
+}
+
+header .logo h1 {
+    font-size: 24px;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.search-bar {
+    display: flex;
+}
+
+.search-bar input {
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+
+/* AI相談ボタンのスタイル */
+.ai-consultation-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+.ai-consultation-btn:hover {
+    background-color: #ff3b2f;
+    }
+
+
+/* メインビジュアル */
+#hero {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+#hero .slider {
+    display: flex;
+}
+
+#hero .slide {
+    max-width: auto;
+    transition: 0.5s ease;
+    margin: auto;
+    text-align: center;
+    display: block;
+    height: auto;
+}
+
+#hero .slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+#hero .caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+}
+
+/* 商品グリッド */
+#new-arrivals {
+    padding: 40px;
+    background-color: white;
+}
+
+#new-arrivals h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#men{
+    padding: 40px;
+    background-color: white;
+}
+
+#men h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.item {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+.item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.item p {
+    margin: 10px 0;
+}
+
+/* フッター */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .items-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #hero {
+        height: 300px;
+    }
+
+    #hero .slide img {
+        height: 300px;
+    }
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
+/* ボタンを中央に配置して目立たせる */
+#random-items button {
+    display: block;
+    margin: 20px auto; /* 上下のマージンを追加して中央に配置 */
+    padding: 10px 20px; /* ボタンのパディングを追加してサイズを大きく */
+    font-size: 16px; /* ボタンのフォントサイズを大きくして目立たせる */
+    background-color: #ff6347; /* 鮮やかな背景色 (トマト色) */
+    color: white; /* テキストの色を白に */
+    border: none; /* ボーダーなし */
+    border-radius: 5px; /* ボタンの角を丸く */
+    cursor: pointer; /* ホバー時にカーソルを変更 */
+    transition: background-color 0.3s ease; /* ホバー時の色変化をスムーズに */
+}
+
+/* ホバー時のエフェクト */
+#random-items button:hover {
+    background-color: #ff4500; /* ホバー時に背景色を少し暗く */
+}
+
+/* 小さな枠にアイテムを表示するスタイル */
+#random-items-grid {
+    display: flex;
+    justify-content: center; /* 中央揃え */
+    gap: 10px; /* アイテム間のスペース */
+}
+
+.item {
+    width: 300px; /* アイテムの枠の幅 */
+    border: 1px solid #ddd; /* 枠線 */
+    padding: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.item img {
+    width: 200px; /* 画像のサイズを小さくする */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.item p {
+    margin: 5px 0;
+    font-size: 14px; /* テキストのサイズを少し小さく */
+}
+
+/* 新着アイテムのスライドスタイル */
+.slider {
+    position: relative;
+    overflow: hidden; /* 溢れた部分を隠す */
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.3s ease; /* スライドのアニメーション */
+}
+
+.slider-container .item {
+    min-width: 300px; /* アイテムの最小幅 */
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+

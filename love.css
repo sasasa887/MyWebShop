@@ -1,0 +1,227 @@
+/* 基本設定 */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* より明るいグレー背景 */
+}
+
+/* ナビゲーション */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6c63ff; /* ソフトなバイオレット */
+    max-width: flex;
+    max-height: 300px;
+    color: white;
+}
+
+header .logo h1 {
+    font-size: 24px; /* フォントサイズを少し大きく */
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin: 0 15px; /* アイテム間のマージンを調整 */
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+header nav ul li a:hover {
+    color: #ffcc00; /* ホバー時に明るいゴールドに */
+}
+
+.search-bar {
+    display: flex;
+}
+
+.search-bar input {
+    padding: 8px; /* paddingを少し増やす */
+    font-size: 16px;
+    border: 2px solid #ffcc00; /* 明るいゴールドのボーダー */
+    border-radius: 5px; /* 角を丸める */
+    margin-right: 10px;
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    background-color: #ff5722; /* 明るいオレンジ */
+    color: white;
+    border: none;
+    border-radius: 5px; /* 角を丸める */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #e64a19; /* ホバー時に少し暗くなる */
+}
+
+/* メインビジュアル */
+#hero {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+#hero .slider {
+    display: flex;
+}
+
+#hero .slide {
+    max-width: auto;
+    transition: 0.5s ease;
+    margin: auto;
+    text-align: center;
+    display: block;
+    height: auto;
+}
+
+#hero .slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+#hero .caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px 25px; /* paddingを増やして目立たせる */
+    border-radius: 8px; /* 角を丸める */
+    font-size: 20px; /* フォントサイズを少し大きく */
+}
+
+/* 商品グリッド */
+#new-arrivals {
+    padding: 40px;
+    background-color: white;
+}
+
+#new-arrivals h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #6c63ff; /* ソフトなバイオレット */
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* 最小幅を220pxに */
+    gap: 20px;
+}
+
+.item {
+    background-color: #ffffff; /* 白色の背景 */
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px; /* 角を丸める */
+    transition: transform 0.3s, box-shadow 0.3s; /* シャドウと変形のトランジション */
+}
+
+.item:hover {
+    transform: translateY(-5px); /* ホバー時に少し持ち上がる */
+    box-shadow: 0 4px 20px rgba(108, 99, 255, 0.2); /* 軽い影を追加 */
+}
+
+.item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* 画像の角を丸くする */
+}
+
+.item p {
+    margin: 10px 0;
+    color: #343a40; /* ダークグレー */
+}
+
+/* フッター */
+footer {
+    background-color: #6c63ff; /* ソフトなバイオレット */
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .items-grid {
+        grid-template-columns: 1fr; /* モバイルビューで1カラムに変更 */
+    }
+
+    #hero {
+        height: 300px; /* モバイルでの高さを調整 */
+    }
+
+    #hero .slide img {
+        height: 300px; /* モバイルでの画像の高さを調整 */
+    }
+}
+
+/* スライダー */
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.items-grid {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.item {
+    min-width: 20%; /* 5つのアイテムが一度に表示されるように設定 */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
