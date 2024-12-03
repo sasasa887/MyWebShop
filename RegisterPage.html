@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン</title>
+    <link rel="stylesheet" href="./css/register.css">
+</head>
+<body>
+    <header>
+        <h1>NPTStore</h1>
+        <nav>
+            <ul>
+                <li><a href="TopPage.html">ホーム</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 登録済みユーザー向けのログインフォーム -->
+    <section class="main-login registered-login">
+        <h2>ログイン</h2>
+        <form id="login-form">
+            <label for="id-login">ユーザーID:</label>
+            <input type="text" id="name" name="id-login" required>
+
+            <label for="password-login">パスワード:</label>
+            <input type="password" id="password" name="password-login" required>
+
+            <button type="submit">ログイン</button>
+        </form>
+
+        <p>アカウントをお持ちでない方は、<a href="#" id="show-register">こちら</a>から新規登録してください。</p>
+    </section>
+
+    <!-- 新規登録ユーザー向けのフォーム（初期は非表示） -->
+    <main class="main-login" id="register-section" style="display:none;">
+        <h2>新規アカウント登録</h2>
+        <form action="./BE/register.php" method="POST" >
+            <label for="name">ユーザーID:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="gender">性別:</label>
+            <select id="gender" name="gender" required>
+                <option value="男性">男性</option>
+                <option value="女性">女性</option>
+                <option value="その他">その他</option>
+            </select>
+
+            <label for="dob">生年月日:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="postal">郵便番号:</label>
+            <input type="text" id="postal" name="postal" pattern="[0-9]{3}-[0-9]{4}" required placeholder="123-4567">
+
+            <label for="email">メールアドレス:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">パスワード:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="password-confirm">パスワード(確認):</label>
+            <input type="password" id="password-confirm" name="password-confirm" required>
+
+            <button type="submit">アカウント登録</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 NPTStore - All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('show-register').addEventListener('click', function() {
+            // 新規登録フォームを表示
+            document.getElementById('register-section').style.display = 'flex';
+            // ログインフォームを非表示に
+            document.querySelector('.registered-login').style.display = 'none';
+        });
+
+        document.getElementById('register-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // フォームのデフォルトの送信を防ぐ
+            document.getElementById('register-section').style.display = 'none'; // 登録フォームを非表示
+            document.getElementById('registration-success').style.display = 'block'; // 登録完了メッセージを表示
+        });
+
+        document.getElementById('back-to-login').addEventListener('click', function() {
+            // ログイン画面に戻る処理
+            document.getElementById('registration-success').style.display = 'none'; // 登録完了メッセージを非表示
+            document.querySelector('.registered-login').style.display = 'flex'; // ログインフォームを表示
+        });
+    </script>
+</body>
+</html>
